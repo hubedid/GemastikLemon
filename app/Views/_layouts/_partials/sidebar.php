@@ -34,9 +34,9 @@
                             Dashboard
                         </p>
                     </a>
+                </li>
+                <li class="nav-item">
                     <a href="/report" <?php 
-                    $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";  
-                    $CurPageURL = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
                     if(base_url().'/report' == $CurPageURL){echo 'class="nav-link active"';}else{echo 'class="nav-link"';}
                     ?>>
                     <!-- <a href="/report" class="nav-link active"> -->
@@ -46,9 +46,9 @@
                             Report
                         </p>
                     </a>
+                </li>
+                <li class="nav-item">
                     <a href="/tracking" <?php 
-                    $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";  
-                    $CurPageURL = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
                     if(base_url().'/tracking' == $CurPageURL){echo 'class="nav-link active"';}else{echo 'class="nav-link"';}
                     ?>>
                     <!-- <a href="/report" class="nav-link active"> -->
@@ -59,7 +59,6 @@
                         </p>
                     </a>
                 </li>
-                
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
