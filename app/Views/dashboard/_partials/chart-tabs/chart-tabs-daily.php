@@ -103,7 +103,6 @@
             var tahun = $('#tahun').val();
             var bulan = $('#bulan').val();
             var minggu = $('#minggu').val();
-            // var material = $('#material_barChartDaily').val();
             $.ajax({
                 url: "<?php echo base_url(); ?>/Report/get_data_income_daily",
                 method: "POST",
@@ -119,37 +118,8 @@
                 }
             })
         });
-        // function update_mean(data){
-        //     let sum_income = 0;
-        //     let jum = 0;
-        //     data.forEach(item=>{
-        //         sum_income += parseInt(item.income);
-        //         jum += 1;
-        //     })
-        //     console.log(sum_income/jum);
-        // }
-        // <!-- CHART UNIT PRODUKSI -->
+
         function update_barChartDaily_realisasi(chart, minggu, data) {
-            // let labelPie = [];
-            // data.forEach(item => {
-            //     if(!labelPie.includes(`${item.plant}`)) labelPie.push(`${item.plant}`);
-            // })
-            
-            // let dataNama_produk = {}, jumlahPlant = 0, i = 0;
-            // data.forEach(item => {
-            //     if(`${item.plant}` == `${labelPie[i]}`){
-            //         jumlahPlant = 0;
-            //         i++;
-            //     }
-            //     jumlahPlant += parseInt(item.rkap);
-            //     dataNama_produk[`${item.plant}`] = jumlahPlant;
-                
-            // });
-            
-            // let datasetPie = []
-            // for (attr in dataNama_produk){
-            //     datasetPie.push(dataNama_produk[`${attr}`]);
-            // }
             var days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
             let hari = []
             data.forEach(item=>{
@@ -160,12 +130,6 @@
             data.forEach(item=>{
                 income.push(item.daily_income);
             })
-            // i = 0
-            // labelPie.forEach(label => {
-            //     label = `${label} - ${desc_plant[i]}`;
-            //     desc_plant[i] = label;
-            //     i++;
-            // })
             const data_bar_daily = {
                 labels: hari,
                 datasets: [{
@@ -180,4 +144,3 @@
         }
 
     </script>
-    <!-- ============ PIE CHART ============ -->

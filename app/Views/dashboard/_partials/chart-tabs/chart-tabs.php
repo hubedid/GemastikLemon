@@ -32,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <!-- ============ PIE CHART ============ -->
+    <!-- ============ CHART ============ -->
     <script type="text/javascript">
         const backgroundColor = [
             'rgba(255, 99, 132, 0.5)',
@@ -73,31 +73,6 @@
             options: {
                 maintainAspectRatio: false,
                 responsive: true,
-                // scales: {
-                //     yAxes: [{
-                //     stacked: true,
-                //     gridLines: {
-                //         display: true,
-                //         color: "rgba(255,99,132,0.2)"
-                //     }
-                //     }],
-                //     xAxes: [{
-                //     gridLines: {
-                //         display: false
-                //     }
-                //     }]
-                // },
-                // scales: {
-                //     r: {
-                //         pointLabels: {
-                //             display: true,
-                //             centerPointLabels: true,
-                //             font: {
-                //                 size: 10
-                //             }
-                //         }
-                //     }
-                // },
                 plugins: {
                     legend: {
                         position: 'top',
@@ -116,13 +91,11 @@
         );
         $('#btn_tampil').click(function() {
             var tahun = $('#tahun').val();
-            // var material = $('#material_barChart').val();
             $.ajax({
                 url: "<?php echo base_url(); ?>/Home/get_data_income",
                 method: "POST",
                 data: {
                     tahun
-                    // material
                 },
                 dataType: "JSON",
                 success: function(result, textStatus, jqXHR) {
@@ -133,37 +106,7 @@
                 }
             })
         });
-        // function update_mean(data){
-        //     let sum_income = 0;
-        //     let jum = 0;
-        //     data.forEach(item=>{
-        //         sum_income += parseInt(item.income);
-        //         jum += 1;
-        //     })
-        //     console.log(sum_income/jum);
-        // }
-        // <!-- CHART UNIT PRODUKSI -->
         function update_barChart_realisasi(chart, tahun, data) {
-            // let labelPie = [];
-            // data.forEach(item => {
-            //     if(!labelPie.includes(`${item.plant}`)) labelPie.push(`${item.plant}`);
-            // })
-            
-            // let dataNama_produk = {}, jumlahPlant = 0, i = 0;
-            // data.forEach(item => {
-            //     if(`${item.plant}` == `${labelPie[i]}`){
-            //         jumlahPlant = 0;
-            //         i++;
-            //     }
-            //     jumlahPlant += parseInt(item.rkap);
-            //     dataNama_produk[`${item.plant}`] = jumlahPlant;
-                
-            // });
-            
-            // let datasetPie = []
-            // for (attr in dataNama_produk){
-            //     datasetPie.push(dataNama_produk[`${attr}`]);
-            // }
             var month= ["January","February","March","April","May","June","July",
             "August","September","October","November","December"];
             let bulan = []
@@ -174,12 +117,6 @@
             data.forEach(item=>{
                 income.push(item.income);
             })
-            // i = 0
-            // labelPie.forEach(label => {
-            //     label = `${label} - ${desc_plant[i]}`;
-            //     desc_plant[i] = label;
-            //     i++;
-            // })
             const data_bar = {
                 labels: bulan,
                 datasets: [{
@@ -195,4 +132,3 @@
         }
 
     </script>
-    <!-- ============ PIE CHART ============ -->
