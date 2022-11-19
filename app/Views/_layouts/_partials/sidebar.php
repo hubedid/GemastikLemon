@@ -46,6 +46,18 @@
                             Report
                         </p>
                     </a>
+                    <a href="/tracking" <?php 
+                    $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";  
+                    $CurPageURL = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
+                    if(base_url().'/tracking' == $CurPageURL){echo 'class="nav-link active"';}else{echo 'class="nav-link"';}
+                    ?>>
+                    <!-- <a href="/report" class="nav-link active"> -->
+                        <i class="nav-icon fas fa-map-marker"></i>
+                        
+                        <p>
+                            Tracking
+                        </p>
+                    </a>
                 </li>
                 
             </ul>

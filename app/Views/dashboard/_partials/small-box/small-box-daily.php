@@ -11,7 +11,7 @@
             //     $jum += 1;
             //}
             ?>
-            <h3 id="mean_income">0</h3>
+            <h3 id="mean_income">Rp. 0</h3>
                 <p >Mean Income</p>
             </div>
             <div class="icon">
@@ -25,7 +25,7 @@
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
-                <h3 id="increase">0</h3>
+                <h3 id="increase">Rp. 0</h3>
                 <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
 
                 <p>Increased Revenue</p>

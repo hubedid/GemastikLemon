@@ -15,12 +15,11 @@
             </section>
 
             <section class="col-lg-5 connectedSortable">
-                <?= $this->include('dashboard/_partials/map-card/map-card') ?>
-                <?= $this->include('dashboard/_partials/graph/graph') ?>
-                <?= $this->include('dashboard/_partials/calendar/calendar') ?>
+                <?= $this->include('dashboard/_partials/temporal/valo') ?>
             </section>
 
         </div>
+        <?= $this->include('dashboard/_partials/temporal/area') ?>
     </div>
 </section>
 <?= $this->endSection() ?>

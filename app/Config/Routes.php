@@ -35,6 +35,7 @@ $routes->get('/activate/(:segment)', 'AuthController::activate/$1');
 $routes->get('/recover-password/(:segment)', 'AuthController::recover_view/$1');
 $routes->get('/', 'Home::index', ['filter' => 'auth']);
 $routes->get('/report', 'Report::index', ['filter' => 'auth']);
+$routes->get('/tracking', 'Tracking::index', ['filter' => 'auth']);
 // $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/login', 'Login::index');
 // $routes->get('/register', 'Register::index');
