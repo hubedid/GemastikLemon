@@ -46,6 +46,9 @@ $routes->get('/login', 'Login::index');
 $routes->get('/register', function () {
 	return view('auth/register');
 });
+$routes->get('/logout', function () {
+	return redirect()->to('/authController/logout');
+});
 $routes->get('/forgot-password', function () {
 	return view('auth/forgot-password');
 });

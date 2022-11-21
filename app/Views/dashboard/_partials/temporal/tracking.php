@@ -1,4 +1,7 @@
 <!-- Begin Page Content -->
+<div class="content-header">
+    
+</div>
 
 <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
@@ -58,30 +61,48 @@
         ],
         target: 'map',
         view: new ol.View({
-            center: ol.proj.fromLonLat([107.6103, -6.8877]),
+            center: ol.proj.fromLonLat([107.6103, -6.8911]),
             //  maxoom: 18,
             zoom: 16
         })
     });
+    let lonlat= [
+        {
+            lon: 107.6103,
+            lat: -6.8877
+        },
+        {
+            lon: 107.6080,
+            lat: -6.8908
+        },
+        {
+            lon: 107.6133,
+            lat: -6.8914
+        },
+        {
+            lon: 107.6116,
+            lat: -6.8961
+        },
+    ]
+    let features = []
+    lonlat.forEach(item=>{
+        features.push(
+            new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.fromLonLat([item.lon, item.lat])),
+            })
+        )
+    })
     var layer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            features: [
-                new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat([107.6103, -6.8877])),
-                    
-                    
-                }),
-                new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat([107.6080,-6.8908]))
-                }),
-            ]
+            features: features
         }),
         style: new ol.style.Style({
             image: new ol.style.Icon({
-                anchor: [0.5, 1],
+                anchor: [0.5, 0.5],
                 anchorXUnits: "fraction",
                 anchorYUnits: "fraction",
-                src: "https://openlayers.org/en/v3.20.1/examples/data/icon.png"
+                src: "https://www.kindpng.com/picc/b/150-1509225_car-top-view-png.png",
+                scale: 0.06
             })
         })
     });

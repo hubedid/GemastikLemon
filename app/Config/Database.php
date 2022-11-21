@@ -33,7 +33,7 @@ class Database extends \CodeIgniter\Database\Config
 		'DSN'      => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
-		'password' => 'Hubed.com1',
+		'password' => 'hubed.com1',
 		'database' => 'tes',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
